@@ -15,8 +15,8 @@ inquirer
     }
   ])
   .then((answers) => {
-    const URL = answers.URL;
-    var qr_svg = qr.image(URL);
+    const url = answers.URL;
+    var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream('qr-image.png'));
 
     fs.writeFile("URL.txt", url, (err) => {
